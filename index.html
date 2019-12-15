@@ -6,17 +6,32 @@
 </head>
 <body>
     <script>
-        let sayHello = () => console.log("Hello");
-        sayHello();
+        let person = {
+            name: "mouse",
 
-        let sayHelloToOne = name => console.log("hello", name);
-        // let sayHelloToOne = (name) => console.log("hello", name);
-        sayHelloToOne("mouse");
+            eat : function (food) {
+                console.log(this.name + "吃" + food);
+            },
 
-        let add = (a, b) => {
-            return a + b;
+            eat2 : (food) => console.log(person.name + "吃" + food),
+
+            eat3(food) {
+                console.log(this.name + "吃" + food);
+            }
         };
-        console.log(add(5, 2));
+
+        person.eat("bread");
+        person.eat2("bread2");
+        person.eat3("bread3");
+
+        function helloTo(person) {
+            console.log("Hello", person.name);
+        }
+
+        let hello2 = ({name}) => console.log("Hello", name);
+
+        helloTo(person);
+        hello2(person);
     </script>
 </body>
 </html>
