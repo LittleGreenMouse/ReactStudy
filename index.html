@@ -6,23 +6,27 @@
 </head>
 <body>
     <script>
-        const a1 = [1, 2, 3];
-        const a2 = [4, 5, 6];
+        console.log("start");
 
-        console.log(0, ...a1, 4);
+        const promise = new Promise((resolve, reject) => {
+            // setTimeout模拟异步操作
+            setTimeout(() => {
+                let num = Math.random();
+                if(num > 0.5) {
+                    resolve("succeed: " + num);
+                } else {
+                    reject("fail: " + num);
+                }
+            });
+        });
 
-        function sum(a, b, c) {
-            return a + b + c;
-        }
-        console.log(sum(...a1));
+        promise.then((value) => {
+            console.log(value);
+        }).catch((reason) => {
+            console.log(reason);
+        });
 
-        let arr = [...a1, ...a2];
-        console.log(arr);
-
-        let [first, ...rest] = arr;
-        console.log(first, rest);
-
-        console.log([..."Hello"]);
+        console.log("end");
     </script>
 </body>
 </html>
