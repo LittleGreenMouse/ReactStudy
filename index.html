@@ -6,20 +6,11 @@
 </head>
 <body>
     <script>
-        let arr = [1, 2, 3];
-        let [x, , z] = arr;
-        console.log(x, z);
-
-        const person = {
-            name: 'mouse',
-            age: 22,
-            language: ['java', 'c++', 'python']
-        };
-        let {name, age, language} = person;
-        console.log(name, age, language);
-
-        let {name:n, age:a, language:l} = person;
-        console.log(n, a, l);
+        function add(a, b = 0) {
+            return a + b;
+        }
+        console.log(add(5, 2));
+        console.log(add(5));
     </script>
 </body>
 </html>
