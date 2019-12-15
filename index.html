@@ -6,11 +6,17 @@
 </head>
 <body>
     <script>
-        function add(a, b = 0) {
+        let sayHello = () => console.log("Hello");
+        sayHello();
+
+        let sayHelloToOne = name => console.log("hello", name);
+        // let sayHelloToOne = (name) => console.log("hello", name);
+        sayHelloToOne("mouse");
+
+        let add = (a, b) => {
             return a + b;
-        }
+        };
         console.log(add(5, 2));
-        console.log(add(5));
     </script>
 </body>
 </html>
