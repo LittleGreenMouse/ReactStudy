@@ -6,12 +6,25 @@
 </head>
 <body>
     <script>
-        console.log("const:");
-        const str = "hello";
-        console.log(str);
-        // const是常量
-        str = "world";
-        console.log(str);
+        let str = "Hello world";
+
+        console.log(str, "包含world?", str.includes("world"));
+        console.log(str, "以hello开始?", str.startsWith("Hello"));
+        console.log(str, "以world结束?", str.endsWith("world"));
+
+        let str2 = "hello \n" +
+            "world";
+        console.log(str2);
+
+        let str3 = `
+        h w
+        e o
+        l r
+        l l
+        o d
+          !
+        `;
+        console.log(str3);
     </script>
 </body>
 </html>
