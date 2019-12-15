@@ -6,21 +6,23 @@
 </head>
 <body>
     <script>
-        let arr = ["0", "2", "-4"];
+        const a1 = [1, 2, 3];
+        const a2 = [4, 5, 6];
+
+        console.log(0, ...a1, 4);
+
+        function sum(a, b, c) {
+            return a + b + c;
+        }
+        console.log(sum(...a1));
+
+        let arr = [...a1, ...a2];
         console.log(arr);
 
-        let ret = arr.map((i) => parseInt(i));
-        console.log(ret);
+        let [first, ...rest] = arr;
+        console.log(first, rest);
 
-        let ret2 = ret.reduce((result, next) => {
-            return result + next;
-        });
-        console.log(ret2);
-
-        ret2 = ret.reduce((result, next) => {
-            return result + next;
-        }, 1);
-        console.log(ret2);
+        console.log([..."Hello"]);
     </script>
 </body>
 </html>
