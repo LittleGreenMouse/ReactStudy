@@ -6,25 +6,20 @@
 </head>
 <body>
     <script>
-        let str = "Hello world";
+        let arr = [1, 2, 3];
+        let [x, , z] = arr;
+        console.log(x, z);
 
-        console.log(str, "包含world?", str.includes("world"));
-        console.log(str, "以hello开始?", str.startsWith("Hello"));
-        console.log(str, "以world结束?", str.endsWith("world"));
+        const person = {
+            name: 'mouse',
+            age: 22,
+            language: ['java', 'c++', 'python']
+        };
+        let {name, age, language} = person;
+        console.log(name, age, language);
 
-        let str2 = "hello \n" +
-            "world";
-        console.log(str2);
-
-        let str3 = `
-        h w
-        e o
-        l r
-        l l
-        o d
-          !
-        `;
-        console.log(str3);
+        let {name:n, age:a, language:l} = person;
+        console.log(n, a, l);
     </script>
 </body>
 </html>
