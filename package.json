@@ -1,0 +1,9 @@
+{
+  "name": "ES6-learning",
+  "version": "1.0.0",
+  "description": "my learning code for react",
+  "main": "index.js",
+  "repository": "git@github.com:LittleGreenMouse/ReactStudy.git",
+  "author": "LittleMouse <haozhang9899@gmail.com>",
+  "license": "MIT"
+}

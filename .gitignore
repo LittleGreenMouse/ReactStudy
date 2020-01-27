@@ -4,3 +4,9 @@
 # idea
 .idea/
 *.iml
+
+# node
+node_modules
+
+# umi
+.umi
