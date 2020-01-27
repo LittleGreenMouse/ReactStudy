@@ -1,3 +1,7 @@
 export default () => {
-    return <div>Hello world!</div>;
+    const name = () => {
+        return 'Mouse';
+    };
+
+    return <div>Hello world {name()}!</div>;
 }
