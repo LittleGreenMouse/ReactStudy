@@ -6,47 +6,27 @@
 </head>
 <body>
     <script>
-        class User {
-
-            constructor(name, age = 18) {
-                this.name = name;
-                this.age = age;
-            }
-
-            sayHello() {
-                return "Hello, " + this.name;
-            }
-
-            static isAdult(age) {
-                if(age >= 18) {
-                    return 'adult';
-                } else {
-                    return 'child';
-                }
-            }
+        function* hello() {
+            yield 'Hello';
+            yield 'world';
+            yield 'Little';
+            return 'Mouse';
         }
 
-        let user = new User("LittleMouse", 22);
-        console.log(user);
-        console.log(user.sayHello());
+        let h = hello();
+        console.log(h);
+        console.log(h.next());
+        console.log(h.next());
+        console.log(h.next());
+        console.log(h.next());
 
-        console.log(User.isAdult(user.age));
-
-        class Admin extends User {
-
-            constructor() {
-                super("admin");
-            }
-
-            test() {
-                return 'test -> ' + this.name;
-            }
+        //缺少了最后一个return的值
+        h = hello();
+        for(let i of h) {
+            console.log(i);
         }
-
-        let admin = new Admin();
-        console.log(admin);
-        console.log(admin.test());
-        console.log(admin.sayHello());
+        console.log(h);
+        console.log(h.next());
     </script>
 </body>
 </html>
