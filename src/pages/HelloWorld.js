@@ -1,7 +1,13 @@
-export default () => {
-    const name = () => {
-        return 'Mouse';
-    };
+import React from 'react';
 
-    return <div>Hello world {name()}!</div>;
+class HelloWorld extends React.Component{
+
+    render() {
+        return (
+            <div>Hello world, name = {this.props.name}, content = {this.props.children}!</div>
+        );
+    }
+
 }
+
+export default HelloWorld;
