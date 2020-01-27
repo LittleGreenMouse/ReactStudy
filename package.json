@@ -1,9 +1,12 @@
 {
-  "name": "ES6-learning",
+  "name": "ReactLearning",
   "version": "1.0.0",
-  "description": "my learning code for react",
   "main": "index.js",
   "repository": "git@github.com:LittleGreenMouse/ReactStudy.git",
   "author": "LittleMouse <haozhang9899@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "umi": "^2.13.3",
+    "umi-plugin-react": "^1.15.2"
+  }
 }
