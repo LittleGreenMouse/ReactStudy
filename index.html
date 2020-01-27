@@ -6,27 +6,17 @@
 </head>
 <body>
     <script>
-        console.log("start");
+        let s1 = new Set();
+        s1.add(4);
+        s1.add(3);
+        s1.add(5);
+        s1.add(6);
 
-        const promise = new Promise((resolve, reject) => {
-            // setTimeout模拟异步操作
-            setTimeout(() => {
-                let num = Math.random();
-                if(num > 0.5) {
-                    resolve("succeed: " + num);
-                } else {
-                    reject("fail: " + num);
-                }
-            });
-        });
+        let s2 = new Set([4, 3, 5, 6]);
 
-        promise.then((value) => {
+        s1.forEach((value => {
             console.log(value);
-        }).catch((reason) => {
-            console.log(reason);
-        });
-
-        console.log("end");
+        }))
     </script>
 </body>
 </html>
