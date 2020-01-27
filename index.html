@@ -6,26 +6,47 @@
 </head>
 <body>
     <script>
-        let map = new Map([
-            ['key1', 1],
-            ['key2', 2]
-        ]);
+        class User {
 
-        console.log(map.get('key1'));
+            constructor(name, age = 18) {
+                this.name = name;
+                this.age = age;
+            }
 
-        map.set('key3', 3);
+            sayHello() {
+                return "Hello, " + this.name;
+            }
 
-        map.forEach(((value, key) => {
-            console.log(key, value);
-        }));
-
-        console.log(map.size);
-
-        for(let key of map.keys()) {
-            console.log(key);
+            static isAdult(age) {
+                if(age >= 18) {
+                    return 'adult';
+                } else {
+                    return 'child';
+                }
+            }
         }
 
-        console.log(...map.values())
+        let user = new User("LittleMouse", 22);
+        console.log(user);
+        console.log(user.sayHello());
+
+        console.log(User.isAdult(user.age));
+
+        class Admin extends User {
+
+            constructor() {
+                super("admin");
+            }
+
+            test() {
+                return 'test -> ' + this.name;
+            }
+        }
+
+        let admin = new Admin();
+        console.log(admin);
+        console.log(admin.test());
+        console.log(admin.sayHello());
     </script>
 </body>
 </html>
