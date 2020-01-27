@@ -6,27 +6,23 @@
 </head>
 <body>
     <script>
-        function* hello() {
-            yield 'Hello';
-            yield 'world';
-            yield 'Little';
-            return 'Mouse';
+        @T
+        class User {
+
+            constructor(name, age = 18) {
+                this.name = name;
+                this.age = age;
+            }
+
         }
 
-        let h = hello();
-        console.log(h);
-        console.log(h.next());
-        console.log(h.next());
-        console.log(h.next());
-        console.log(h.next());
-
-        //缺少了最后一个return的值
-        h = hello();
-        for(let i of h) {
-            console.log(i);
+        // 用target获取被修饰的类
+        function T(target) {
+            console.log(target);
+            target.country = 'China';
         }
-        console.log(h);
-        console.log(h.next());
+
+        console.log(User.country);
     </script>
 </body>
 </html>
