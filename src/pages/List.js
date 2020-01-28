@@ -1,34 +1,40 @@
 import React from 'react';
+import {connect} from 'dva';
 
-class List extends React.Component{
+const NAMESPACE = 'list';
 
-    constructor(props) {
-        super(props);
+const mapStateToProps = (state) => {
+    return {
+        dataList: state[NAMESPACE].data,
+        maxNum: state[NAMESPACE].maxNum
+    };
+};
 
-        this.state = {
-            dataList: [1,2,3],
-            maxNum: 3
+const mapDispatchToProps = (dispatch) => {
+    return {
+        add: () => {
+            dispatch({
+                type: NAMESPACE + "/addNewData"
+            });
         }
     }
+};
+
+@connect(mapStateToProps, mapDispatchToProps)
+class List extends React.Component{
 
     render() {
         return (
             <div>
                 <ul>
                     {
-                        this.state.dataList.map((value, index) => {
+                        this.props.dataList.map((value, index) => {
                             return <li key={index}>{value}</li>;
                         })
                     }
                 </ul>
                 <button onClick={() => {
-                    let newMax = this.state.maxNum + 1;
-                    let newArr = [...this.state.dataList, newMax];
-
-                    this.setState({
-                        dataList: newArr,
-                        maxNum: newMax
-                    })
+                    this.props.add();
                 }}>Click me!</button>
             </div>
         )
