@@ -12,6 +12,11 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        init: () => {
+            dispatch({
+                type: NAMESPACE + '/initData'
+            });
+        },
         add: () => {
             dispatch({
                 type: NAMESPACE + "/addNewData"
@@ -22,6 +27,10 @@ const mapDispatchToProps = (dispatch) => {
 
 @connect(mapStateToProps, mapDispatchToProps)
 class List extends React.Component{
+
+    componentDidMount() {
+        this.props.init();
+    }
 
     render() {
         return (
